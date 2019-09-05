@@ -1,0 +1,8 @@
+cn\dksy\dao\SysLogDao.class
+cn\dksy\dao\PermissionDao.class
+cn\dksy\dao\ProductDao.class
+cn\dksy\dao\MemberDao.class
+cn\dksy\dao\UserDao.class
+cn\dksy\dao\OrdersDao.class
+cn\dksy\dao\TravellerDao.class
+cn\dksy\dao\RoleDao.class

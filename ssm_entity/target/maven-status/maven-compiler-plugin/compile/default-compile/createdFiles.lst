@@ -1,0 +1,8 @@
+cn\dksy\entity\Permission.class
+cn\dksy\entity\SysLog.class
+cn\dksy\entity\UserInfo.class
+cn\dksy\entity\Orders.class
+cn\dksy\entity\Member.class
+cn\dksy\entity\Role.class
+cn\dksy\entity\Traveller.class
+cn\dksy\entity\Product.class

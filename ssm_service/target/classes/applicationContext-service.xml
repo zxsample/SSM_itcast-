@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+			    http://www.springframework.org/schema/beans/spring-beans.xsd
+			    http://www.springframework.org/schema/context
+			    http://www.springframework.org/schema/context/spring-context.xsd
+			    http://www.springframework.org/schema/aop
+			    http://www.springframework.org/schema/aop/spring-aop.xsd
+			    http://www.springframework.org/schema/tx
+			    http://www.springframework.org/schema/tx/spring-tx.xsd
+			    http://www.springframework.org/schema/mvc
+			    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+<!--配置service开始-->
+    <!--    1、组件扫描-->
+        <context:component-scan base-package="cn.dksy.service"/>
+    <!--    2、配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!--    3、事务：两种方式
+       第一种：
+       1、配置事务通知-->
+<!--        <tx:advice id="interceptor">-->
+<!--            <tx:attributes>-->
+<!--                <tx:method name="find*" read-only="true"/>-->
+<!--                <tx:method name="save*" propagation="REQUIRED"/>-->
+<!--                <tx:method name="update*" propagation="REQUIRED"/>-->
+<!--                <tx:method name="delete*" propagation="REQUIRED"/>-->
+<!--                <tx:method name="*" propagation="REQUIRED"/>-->
+<!--            </tx:attributes>-->
+<!--        </tx:advice>-->
+<!--    2、配置aop  aop面向切面编程，切面就是切入点和通知的组合-->
+<!--    2.1 配置切入点表达式   * cn.dksy.dao.*.*(..)  表示 任意返回值   cn.dksy.dao下所有的类和其中的方法（任意参数）-->
+<!--    2.2 建立通知和切入点表达式的关系-->
+<!--            <aop:config >-->
+<!--                <aop:pointcut id="pt1" expression="execution(* cn.dksy.dao.*.*(..))"/>-->
+<!--                <aop:advisor advice-ref="interceptor" pointcut-ref="pt1"/>-->
+<!--            </aop:config>-->
+    <!--第二种：注解 -->
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+<!--配置service结束-->
+
+
+
+</beans>
