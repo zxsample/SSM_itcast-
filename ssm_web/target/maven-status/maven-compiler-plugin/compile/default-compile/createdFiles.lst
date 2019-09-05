@@ -1,7 +1,0 @@
-cn\dksy\controller\UserController.class
-cn\dksy\controller\ProductController.class
-cn\dksy\controller\PermissionController.class
-cn\dksy\controller\RoleController.class
-cn\dksy\controller\LogAop.class
-cn\dksy\controller\SysLogController.class
-cn\dksy\controller\OrdersController.class
